@@ -1,3 +1,8 @@
+;; This is only needed once, near the top of the file
+(eval-when-compile
+  (add-to-list 'load-path "~/.emacs.d/use-package")  
+  (require 'use-package))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -62,10 +67,30 @@
    '("melpa" . "http://melpa.milkbox.net/packages/")
    t))
 
+;; Install packages
+
+;; load emacs 24's package system. Add MELPA repository.
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (add-to-list
+   'package-archives
+   ;; '("melpa" . "http://stable.melpa.org/packages/") ; many packages won't show if using stable
+   '("melpa" . "http://melpa.milkbox.net/packages/")
+   t))
+
+(package-initialize)
+(use-package exec-path-from-shell 
+  :ensure t)
+(use-package pomidor 
+  :ensure t)
+
+
+;; Pomodoro
 (setq pomidor-sound-tick nil
       pomidor-sound-tack nil
       )
-(package-initialize)
+
+
 (exec-path-from-shell-initialize)
 (setq markdown-command "/usr/bin/pandoc")
 

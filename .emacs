@@ -83,7 +83,12 @@
   :ensure t)
 (use-package pomidor 
   :ensure t)
-
+(use-package feature-mode 
+  :ensure t)
+(use-package slim-mode 
+  :ensure t)
+(use-package yaml-mode 
+  :ensure t)
 
 ;; Pomodoro
 (setq pomidor-sound-tick nil

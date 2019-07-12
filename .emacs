@@ -26,8 +26,10 @@
  '(linum-format (quote dynamic))
  '(package-selected-packages
    (quote
-    (gherkin-mode feature-mode docker k8s-mode abs-mode plantuml-mode jabber jira-markup-mode magit pandoc pandoc-mode yaml-mode websocket slim-mode restclient protobuf-mode pomidor markdown-mode less-css-mode json-mode go-mode exec-path-from-shell dakrone-theme color-theme-sanityinc-tomorrow coffee-mode cherry-blossom-theme caroline-theme)))
+    (nginx-mode gherkin-mode feature-mode docker k8s-mode abs-mode plantuml-mode jabber jira-markup-mode magit pandoc pandoc-mode yaml-mode websocket slim-mode restclient protobuf-mode pomidor markdown-mode less-css-mode json-mode go-mode exec-path-from-shell dakrone-theme color-theme-sanityinc-tomorrow coffee-mode cherry-blossom-theme caroline-theme)))
  '(plantuml-jar-path "/home/parrot/plantuml.jar")
+ '(plantuml-server-url "http://prod-plantuml.linx3.k8s.rambler.space")
+ '(plantuml-default-exec-mode 'jar)
  '(pomidor-seconds 2400)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
@@ -88,6 +90,10 @@
 (use-package slim-mode 
   :ensure t)
 (use-package yaml-mode 
+  :ensure t)
+(use-package plantuml-mode 
+  :ensure t) 
+(use-package go-mode 
   :ensure t)
 
 ;; Pomodoro
